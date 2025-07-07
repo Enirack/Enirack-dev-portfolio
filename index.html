@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Enirack Jerry Dada - Expert en développement mobile (Flutter/FlutterFlow), solutions full stack et technologies cutting-edge">
+    <meta name="keywords" content="développeur mobile, Flutter, FlutterFlow, full stack, React Native, mobile apps, API, freelance">
+    <meta name="author" content="Enirack Jerry Dada">
+    <title>Enirack Jerry Dada - Expert Mobile & Full Stack Developer | Freelance IT</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        :root {
+            --primary: #00f5ff;
+            --secondary: #ff0080;
+            --accent: #7c3aed;
+            --dark: #0a0a0f;
+            --darker: #050508;
+        }
+        
+        .typing-cursor {
+            border-right: 3px solid var(--primary);
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: var(--primary); }
+            51%, 100% { border-color: transparent; }
+        }
+        
+        .cyber-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+        }
+        
+        .mobile-gradient {
+            background: linear-gradient(145deg, #00f5ff, #ff0080, #7c3aed, #00ff88);
+            background-size: 400% 400%;
+            animation: gradient-shift 8s ease infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .neon-border {
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.3), inset 0 0 20px rgba(0, 245, 255, 0.1);
+        }
+        
+        .neon-glow {
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.4), 0 0 60px rgba(255, 0, 128, 0.2);
+        }
+        
+        .card-mobile {
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-mobile:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 245, 255, 0.3), 0 0 80px rgba(255, 0, 128, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .floating-phone {
+            animation: float-phone 4s ease-in-out infinite;
+        }
+        
+        @keyframes float-phone {
+            0%, 100% { transform: translateY(0px) rotateY(15deg); }
+            50% { transform: translateY(-30px) rotateY(15deg); }
+        }
+        
+        .code-animation {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .code-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.4), transparent);
+            animation: scan 3s infinite;
+        }
+        
+        @keyframes scan {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .skill-bar-mobile {
+            width: 0%;
+            transition: width 2s ease-out;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.5);
+        }
+        
+        .skill-bar-mobile.animate {
+            width: var(--skill-width);
+        }
+        
+        .mobile-frame {
+            width: 300px;
+            height: 600px;
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            border-radius: 40px;
+            position: relative;
+            box-shadow: 0 0 50px rgba(0, 245, 255, 0.3);
+        }
+        
+        .mobile-screen {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background: #000;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: particle-float 8s infinite ease-in-out;
+        }
+        
+        @keyframes particle-float {
+            0%, 100% { 
+                transform: translateY(100vh) translateX(0px);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { 
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+        
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+        }
+        
+        .tech-card {
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-card:hover {
+            transform: scale(1.05);
+            background: rgba(0, 245, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 245, 255, 0.4);
+        }
+        
+        .project-card-mobile {
+            background: linear-gradient(145deg, rgba(10, 10, 15, 0.9), rgba(26, 26, 46, 0.9));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .project-card-mobile::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            animation: progress-line 4s infinite;
+        }
+        
+        @keyframes progress-line {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .holographic {
+            background: linear-gradient(45deg, 
+                rgba(0, 245, 255, 0.2) 0%, 
+                rgba(255, 0, 128, 0.2) 25%, 
+                rgba(124, 58, 237, 0.2) 50%, 
+                rgba(0, 255, 136, 0.2) 75%, 
+                rgba(0, 245, 255, 0.2) 100%);
+            background-size: 400% 400%;
+            animation: holographic-shift 6s ease infinite;
+        }
+        
+        @keyframes holographic-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .slide-in {
+            transform: translateY(80px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .slide-in.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-frame {
+                width: 250px;
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-black text-white overflow-x-hidden">
+    <!-- Particles Background -->
+    <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 0.5s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 1.5s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 2.5s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 3.5s;"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold cyber-gradient bg-clip-text text-transparent">
+                    &lt;ENIRACK.DEV/&gt;
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <button onclick="scrollToSection('#home')" class="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        <span>Accueil</span>
+                    </button>
+                    <button onclick="scrollToSection('#about')" class="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <i data-lucide="user" class="w-4 h-4"></i>
+                        <span>À propos</span>
+                    </button>
+                    <button onclick="scrollToSection('#skills')" class="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <i data-lucide="code" class="w-4 h-4"></i>
+                        <span>Tech Stack</span>
+                    </button>
+                    <button onclick="scrollToSection('#projects')" class="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <i data-lucide="smartphone" class="w-4 h-4"></i>
+                        <span>Projets</span>
+                    </button>
+                    <button onclick="scrollToSection('#contact')" class="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <i data-lucide="wifi" class="w-4 h-4"></i>
+                        <span>Contact</span>
+                    </button>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 neon-border rounded-lg">
+                    <i data-lucide="menu" class="w-6 h-6 text-cyan-400"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md neon-border">
+                <div class="px-6 py-4 space-y-4">
+                    <button onclick="scrollToSection('#home')" class="flex items-center space-x-3 w-full text-left text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <i data-lucide="home" class="w-5 h-5"></i>
+                        <span>Accueil</span>
+                    </button>
+                    <button onclick="scrollToSection('#about')" class="flex items-center space-x-3 w-full text-left text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <i data-lucide="user" class="w-5 h-5"></i>
+                        <span>À propos</span>
+                    </button>
+                    <button onclick="scrollToSection('#skills')" class="flex items-center space-x-3 w-full text-left text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <i data-lucide="code" class="w-5 h-5"></i>
+                        <span>Tech Stack</span>
+                    </button>
+                    <button onclick="scrollToSection('#projects')" class="flex items-center space-x-3 w-full text-left text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <i data-lucide="smartphone" class="w-5 h-5"></i>
+                        <span>Projets</span>
+                    </button>
+                    <button onclick="scrollToSection('#contact')" class="flex items-center space-x-3 w-full text-left text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                        <i data-lucide="wifi" class="w-5 h-5"></i>
+                        <span>Contact</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8">
+                        <div class="mb-8">
+                            <div class="w-24 h-24 mx-auto mb-8 rounded-full mobile-gradient p-1 neon-glow relative">
+                                <div class="w-full h-full rounded-full bg-black flex items-center justify-center">
+                                    <span class="text-3xl font-bold cyber-gradient bg-clip-text text-transparent">EJD</span>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center animate-pulse">
+                                    <i data-lucide="zap" class="w-4 h-4 text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                            <span class="text-white">Hey, je suis</span>
+                            <span class="block cyber-gradient bg-clip-text text-transparent">&lt;Enirack Jerry/&gt;</span>
+                        </h1>
+                        
+                        <div class="text-xl md:text-2xl text-gray-300 mb-8 h-12 flex items-center justify-center">
+                            <span id="typing-text" class="typing-cursor pr-1"></span>
+                        </div>
+                        
+                        <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                            🚀 <strong>Développeur mobile & full stack</strong> spécialisé dans les solutions cross-platform haute performance.<br>
+                            💡 Je transforme vos idées en applications mobiles <strong>rentables</strong> avec Flutter, Java et des backends ultra-robustes.<br>
+                            🎯 <strong>ROI garanti</strong> • Livraison sous 30 jours • Support 24/7
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                            <button onclick="scrollToSection('#projects')" class="px-8 py-4 mobile-gradient text-black rounded-xl font-bold neon-glow hover:scale-105 transform transition-all duration-300 flex items-center space-x-2">
+                                <i data-lucide="rocket" class="w-5 h-5"></i>
+                                <span>Voir mes apps</span>
+                            </button>
+                            <button onclick="window.open('CV_Enirack_Jerry_Dada.pdf', '_blank')" class="px-8 py-4 neon-border text-cyan-400 rounded-xl font-bold hover:bg-cyan-400/10 transition-all duration-300 flex items-center space-x-2">
+                                <i data-lucide="download-cloud" class="w-5 h-5"></i>
+                                <span>Télécharger CV</span>
+                            </button>
+                        </div>
+                        
+                        <div class="flex justify-center space-x-6">
+                            <a href="https://github.com/enirack" target="_blank" class="p-4 rounded-full card-mobile hover:scale-110 transform transition-all duration-300">
+                                <i data-lucide="github" class="w-6 h-6 text-cyan-400"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/enirack-dada" target="_blank" class="p-4 rounded-full card-mobile hover:scale-110 transform transition-all duration-300">
+                                <i data-lucide="linkedin" class="w-6 h-6 text-cyan-400"></i>
+                            </a>
+                            <a href="https://wa.me/22996281025" target="_blank" class="p-4 rounded-full card-mobile hover:scale-110 transform transition-all duration-300">
+                                <i data-lucide="message-circle" class="w-6 h-6 text-cyan-400"></i>
+                            </a>
+                            <a href="mailto:enirackjerrydada@gmail.com" class="p-4 rounded-full card-mobile hover:scale-110 transform transition-all duration-300">
+                                <i data-lucide="mail" class="w-6 h-6 text-cyan-400"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <!-- Smartphones avec apps réalistes -->
+                        <div class="flex justify-center space-x-8">
+                            <!-- Téléphone 1 - PharmaGarde App -->
+                            <div class="mobile-frame floating-phone">
+                                <div class="mobile-screen bg-gradient-to-b from-white via-gray-50 to-gray-100">
+                                    <!-- Status bar -->
+                                    <div class="flex justify-between items-center px-6 py-2 text-xs text-gray-800">
+                                        <span class="font-medium">9:41</span>
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-4 h-2 border border-gray-800 rounded-sm">
+                                                <div class="w-3 h-1 bg-green-500 rounded-sm m-0.5"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- App Header -->
+                                    <div class="px-6 py-4 bg-red-500 text-white">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                                                <i data-lucide="cross" class="w-5 h-5 text-red-500"></i>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-bold text-lg">PharmaGarde</h3>
+                                                <p class="text-xs opacity-90">Pharmacies de garde - Bénin</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Map Area -->
+                                    <div class="h-32 bg-gradient-to-br from-green-200 to-blue-200 relative">
+                                        <div class="absolute inset-0 opacity-30">
+                                            <div class="w-full h-full bg-gray-300 rounded-lg"></div>
+                                        </div>
+                                        <!-- Pin markers -->
+                                        <div class="absolute top-4 left-8 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                                        <div class="absolute top-8 right-6 w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                                        <div class="absolute bottom-6 left-12 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                                    </div>
+                                    
+                                    <!-- Pharmacy List -->
+                                    <div class="px-4 py-3 space-y-3">
+                                        <div class="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                                    <i data-lucide="map-pin" class="w-4 h-4 text-green-600"></i>
+                                                </div>
+                                                <div class="flex-1">
+                                                    <h4 class="font-medium text-gray-900 text-sm">Pharmacie Centrale</h4>
+                                                    <p class="text-xs text-gray-500">Cotonou • Ouverte 24h/24</p>
+                                                </div>
+                                                <div class="text-xs text-green-600 font-medium">850m</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                                    <i data-lucide="clock" class="w-4 h-4 text-blue-600"></i>
+                                                </div>
+                                                <div class="flex-1">
+                                                    <h4 class="font-medium text-gray-900 text-sm">Pharmacie du Plateau</h4>
+                                                    <p class="text-xs text-gray-500">Porto-Novo • Jusqu'à 22h</p>
+                                                </div>
+                                                <div class="text-xs text-blue-600 font-medium">1.2km</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Bottom Navigation -->
+                                    <div class="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-3">
+                                        <div class="flex justify-around">
+                                            <div class="text-center">
+                                                <i data-lucide="map" class="w-5 h-5 text-red-500 mx-auto"></i>
+                                                <span class="text-xs text-red-500 font-medium">Carte</span>
+                                            </div>
+                                            <div class="text-center">
+                                                <i data-lucide="list" class="w-5 h-5 text-gray-400 mx-auto"></i>
+                                                <span class="text-xs text-gray-400">Liste</span>
+                                            </div>
+                                            <div class="text-center">
+                                                <i data-lucide="bookmark" class="w-5 h-5 text-gray-400 mx-auto"></i>
+                                                <span class="text-xs text-gray-400">Favoris</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Téléphone 2 - E-commerce App -->
+                            <div class="mobile-frame floating-phone" style="animation-delay: -2s;">
+                                <div class="mobile-screen bg-gradient-to-b from-white via-gray-50 to-gray-100">
+                                    <!-- Status bar -->
+                                    <div class="flex justify-between items-center px-6 py-2 text-xs text-gray-800">
+                                        <span class="font-medium">9:41</span>
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-4 h-2 border border-gray-800 rounded-sm">
+                                                <div class="w-3 h-1 bg-green-500 rounded-sm m-0.5"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- App Header -->
+                                    <div class="px-6 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                                                    <i data-lucide="shopping-bag" class="w-5 h-5 text-purple-600"></i>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-bold text-lg">ShopFlow</h3>
+                                                    <p class="text-xs opacity-90">E-commerce mobile</p>
+                                                </div>
+                                            </div>
+                                            <div class="relative">
+                                                <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                                                <div class="absolute -top-2 -right-2 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                                                    <span class="text-xs font-bold">3</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Search Bar -->
+                                    <div class="px-4 py-3">
+                                        <div class="bg-gray-100 rounded-lg px-3 py-2 flex items-center space-x-2">
+                                            <i data-lucide="search" class="w-4 h-4 text-gray-500"></i>
+                                            <span class="text-sm text-gray-500">Rechercher des produits...</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Products Grid -->
+                                    <div class="px-4 grid grid-cols-2 gap-3">
+                                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                                            <div class="w-full h-16 bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg mb-2 flex items-center justify-center">
+                                                <i data-lucide="smartphone" class="w-6 h-6 text-blue-600"></i>
+                                            </div>
+                                            <h4 class="font-medium text-gray-900 text-xs">iPhone 15 Pro</h4>
+                                            <p class="text-xs text-gray-500">Smartphone</p>
+                                            <div class="flex items-center justify-between mt-1">
+                                                <span class="font-bold text-purple-600 text-sm">850€</span>
+                                                <i data-lucide="heart" class="w-3 h-3 text-gray-400"></i>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bg-white rounded-lg p-3 shadow-sm">
+                                            <div class="w-full h-16 bg-gradient-to-br from-green-100 to-green-200 rounded-lg mb-2 flex items-center justify-center">
+                                                <i data-lucide="headphones" class="w-6 h-6 text-green-600"></i>
+                                            </div>
+                                            <h4 class="font-medium text-gray-900 text-xs">AirPods Pro</h4>
+                                            <p class="text-xs text-gray-500">Audio</p>
+                                            <div class="flex items-center justify-between mt-1">
+                                                <span class="font-bold text-purple-600 text-sm">249€</span>
+                                                <i data-lucide="heart" class="w-3 h-3 text-red-500 fill-current"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Bottom Navigation -->
+                                    <div class="absolute bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-3">
+                                        <div class="flex justify-around">
+                                            <div class="text-center">
+                                                <i data-lucide="home" class="w-5 h-5 text-purple-600 mx-auto"></i>
+                                                <span class="text-xs text-purple-600 font-medium">Accueil</span>
+                                            </div>
+                                            <div class="text-center">
+                                                <i data-lucide="search" class="w-5 h-5 text-gray-400 mx-auto"></i>
+                                                <span class="text-xs text-gray-400">Recherche</span>
+                                            </div>
+                                            <div class="text-center">
+                                                <i data-lucide="user" class="w-5 h-5 text-gray-400 mx-auto"></i>
+                                                <span class="text-xs text-gray-400">Profil</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button onclick="scrollToSection('#about')" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-cyan-400 hover:text-pink-400 transition-colors duration-300">
+                <i data-lucide="chevron-down" class="w-8 h-8"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 slide-in">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        &lt;About <span class="cyber-gradient bg-clip-text text-transparent">Me/&gt;</span>
+                    </h2>
+                    <div class="w-20 h-1 mobile-gradient mx-auto mb-8"></div>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        Architecte de solutions mobiles et développeur full stack passionné
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="space-y-6 slide-in">
+                        <div class="card-mobile p-8 rounded-2xl">
+                            <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                                <i data-lucide="code-2" class="w-8 h-8 text-cyan-400 mr-3"></i>
+                                Expertise Mobile & Full Stack
+                            </h3>
+                            <p class="text-gray-300 leading-relaxed mb-6">
+                                ⚡ <strong>Expert en développement mobile cross-platform</strong> avec Flutter et FlutterFlow, je maîtrise l'écosystème 
+                                full stack moderne : API REST, microservices Java Spring Boot, bases de données et déploiement cloud.<br><br>
+                                
+                                🎯 <strong>Mon approche unique :</strong> Performance maximale + UX exceptionnelle + Délais respectés = 
+                                <span class="text-cyan-400 font-bold">Applications qui génèrent du profit</span>
+                            </p>
+                            <p class="text-gray-300 leading-relaxed mb-6">
+                                📈 <strong>Résultats prouvés :</strong> +12 000 utilisateurs actifs sur PharmaGarde, 
+                                +5 000 téléchargements sur mes apps e-commerce, et des clients qui recommandent à 98%.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-4 mt-8">
+                                <div class="text-center p-4 rounded-xl bg-cyan-400/10 border border-cyan-400/20">
+                                    <div class="text-2xl font-bold text-cyan-400 mb-1">15+</div>
+                                    <div class="text-gray-400 text-sm">Apps Mobile</div>
+                                </div>
+                                <div class="text-center p-4 rounded-xl bg-pink-500/10 border border-pink-500/20">
+                                    <div class="text-2xl font-bold text-pink-400 mb-1">30+</div>
+                                    <div class="text-gray-400 text-sm">API créées</div>
+                                </div>
+                                <div class="text-center p-4 rounded-xl bg-purple-500/10 border border-purple-500/20">
+                                    <div class="text-2xl font-bold text-purple-400 mb-1">50+</div>
+                                    <div class="text-gray-400 text-sm">Projets web</div>
+                                </div>
+                                <div class="text-center p-4 rounded-xl bg-green-400/10 border border-green-400/20">
+                                    <div class="text-2xl font-bold text-green-400 mb-1">3+</div>
+                                    <div class="text-gray-400 text-sm">Années pro</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative slide-in">
+                        <div class="card-mobile p-8 rounded-2xl code-animation">
+                            <h4 class="text-xl font-bold text-white mb-6 flex items-center">
+                                <i data-lucide="terminal" class="w-6 h-6 text-green-400 mr-2"></i>
+                                Stack Technique
+                            </h4>
+                                                            <div class="space-y-4 font-mono text-sm">
+                                <div class="text-cyan-400">
+                                    <span class="text-gray-500">// </span>Mobile Development
+                                </div>
+                                <div class="text-gray-300 pl-4">
+                                    <span class="text-pink-400">const</span> <span class="text-yellow-400">mobile</span> = {<br>
+                                    &nbsp;&nbsp;<span class="text-blue-400">flutter</span>: <span class="text-green-400">'expert'</span>,<br>
+                                    &nbsp;&nbsp;<span class="text-blue-400">flutterflow</span>: <span class="text-green-400">'pro'</span>,<br>
+                                    &nbsp;&nbsp;<span class="text-blue-400">dart</span>: <span class="text-green-400">'advanced'</span><br>
+                                    };
+                                </div>
+                                <div class="text-cyan-400 mt-4">
+                                    <span class="text-gray-500">// </span>Backend & APIs
+                                </div>
+                                <div class="text-gray-300 pl-4">
+                                    <span class="text-pink-400">const</span> <span class="text-yellow-400">backend</span> = {<br>
+                                    &nbsp;&nbsp;<span class="text-blue-400">laravel</span>: <span class="text-green-400">'expert'</span>,<br>
+                                    &nbsp;&nbsp;<span class="text-blue-400">java</span>: <span class="text-green-400">'advanced'</span>,<br>
+                                    &nbsp;&nbsp;<span class="text-blue-400">firebase</span>: <span class="text-green-400">'pro'</span><br>
+                                    };
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center slide-in">
+                    <div class="flex flex-wrap justify-center gap-4 mb-8">
+                        <span class="px-6 py-3 card-mobile rounded-full font-medium flex items-center text-cyan-400">
+                            <i data-lucide="smartphone" class="w-4 h-4 mr-2"></i>
+                            Mobile First
+                        </span>
+                        <span class="px-6 py-3 card-mobile rounded-full font-medium flex items-center text-pink-400">
+                            <i data-lucide="zap" class="w-4 h-4 mr-2"></i>
+                            Performance
+                        </span>
+                        <span class="px-6 py-3 card-mobile rounded-full font-medium flex items-center text-purple-400">
+                            <i data-lucide="layers" class="w-4 h-4 mr-2"></i>
+                            Scalable
+                        </span>
+                        <span class="px-6 py-3 card-mobile rounded-full font-medium flex items-center text-green-400">
+                            <i data-lucide="shield-check" class="w-4 h-4 mr-2"></i>
+                            Secure
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 slide-in">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        &lt;Tech <span class="cyber-gradient bg-clip-text text-transparent">Stack/&gt;</span>
+                    </h2>
+                    <div class="w-20 h-1 mobile-gradient mx-auto mb-8"></div>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        Technologies cutting-edge pour des solutions d'exception
+                    </p>
+                </div>
+                
+                <!-- Mobile Development -->
+                <div class="mb-16 slide-in">
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-cyan-400 mr-3"></i>
+                        Mobile Development
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="card-mobile p-8 rounded-2xl">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-blue-600 flex items-center justify-center mr-4">
+                                    <i data-lucide="layers" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-white">Flutter & Dart</h4>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-medium text-gray-300">Cross-platform Apps</span>
+                                        <span class="text-sm text-cyan-400">95%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-800 rounded-full h-2">
+                                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full skill-bar-mobile" data-width="95%"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-medium text-gray-300">State Management</span>
+                                        <span class="text-sm text-cyan-400">92%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-800 rounded-full h-2">
+                                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full skill-bar-mobile" data-width="92%"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-medium text-gray-300">Custom Widgets</span>
+                                        <span class="text-sm text-cyan-400">90%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-800 rounded-full h-2">
+                                        <div class="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full skill-bar-mobile" data-width="90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-mobile p-8 rounded-2xl">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center mr-4">
+                                    <i data-lucide="zap" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <h4 class="text-xl font-bold text-white">FlutterFlow</h4>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-medium text-gray-300">Rapid Prototyping</span>
+                                        <span class="text-sm text-pink-400">93%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-800 rounded-full h-2">
+                                        <div class="bg-gradient-to-r from-pink-500 to-purple-500 h-2 rounded-full skill-bar-mobile" data-width="93%"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-medium text-gray-300">Custom Functions</span>
+                                        <span class="text-sm text-pink-400">88%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-800 rounded-full h-2">
+                                        <div class="bg-gradient-to-r from-pink-500 to-purple-500 h-2 rounded-full skill-bar-mobile" data-width="88%"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-medium text-gray-300">Firebase Integration</span>
+                                        <span class="text-sm text-pink-400">90%</span>
+                                    </div>
+                                    <div class="w-full bg-gray-800 rounded-full h-2">
+                                        <div class="bg-gradient-to-r from-pink-500 to-purple-500 h-2 rounded-full skill-bar-mobile" data-width="90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend & APIs -->
+                <div class="mb-16 slide-in">
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                        <i data-lucide="server" class="w-8 h-8 text-green-400 mr-3"></i>
+                        Backend & APIs
+                    </h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="card-mobile p-6 rounded-2xl">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 to-orange-500 flex items-center justify-center mr-3">
+                                    <i data-lucide="code" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-white">Laravel/PHP</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-300 text-sm">REST APIs</span>
+                                    <span class="text-orange-400 text-sm">92%</span>
+                                </div>
+                                <div class="w-full bg-gray-800 rounded-full h-1.5">
+                                    <div class="bg-gradient-to-r from-orange-500 to-red-500 h-1.5 rounded-full skill-bar-mobile" data-width="92%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-mobile p-6 rounded-2xl">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 flex items-center justify-center mr-3">
+                                    <i data-lucide="cloud" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-white">Firebase</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-300 text-sm">Real-time DB</span>
+                                    <span class="text-green-400 text-sm">88%</span>
+                                </div>
+                                <div class="w-full bg-gray-800 rounded-full h-1.5">
+                                    <div class="bg-gradient-to-r from-green-500 to-emerald-500 h-1.5 rounded-full skill-bar-mobile" data-width="88%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-mobile p-6 rounded-2xl">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 flex items-center justify-center mr-3">
+                                    <i data-lucide="coffee" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-white">Java Spring</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-300 text-sm">Spring Boot</span>
+                                    <span class="text-orange-400 text-sm">90%</span>
+                                </div>
+                                <div class="w-full bg-gray-800 rounded-full h-1.5">
+                                    <div class="bg-gradient-to-r from-orange-500 to-amber-500 h-1.5 rounded-full skill-bar-mobile" data-width="90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack Grid -->
+                <div class="slide-in">
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                        <i data-lucide="layers" class="w-8 h-8 text-purple-400 mr-3"></i>
+                        Technologies Maîtrisées
+                    </h3>
+                    <div class="tech-stack-grid">
+                        <div class="tech-card group">
+                            <i data-lucide="smartphone" class="w-12 h-12 text-cyan-400 mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
+                            <h5 class="font-bold text-white">Flutter</h5>
+                            <p class="text-gray-400 text-sm">Cross-platform</p>
+                        </div>
+                        <div class="tech-card group">
+                            <i data-lucide="code" class="w-12 h-12 text-orange-400 mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
+                            <h5 class="font-bold text-white">Laravel</h5>
+                            <p class="text-gray-400 text-sm">Backend</p>
+                        </div>
+                        <div class="tech-card group">
+                            <i data-lucide="coffee" class="w-12 h-12 text-orange-400 mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
+                            <h5 class="font-bold text-white">Java</h5>
+                            <p class="text-gray-400 text-sm">Backend</p>
+                        </div>
+                        <div class="tech-card group">
+                            <i data-lucide="database" class="w-12 h-12 text-green-400 mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
+                            <h5 class="font-bold text-white">MySQL</h5>
+                            <p class="text-gray-400 text-sm">Database</p>
+                        </div>
+                        <div class="tech-card group">
+                            <i data-lucide="cloud" class="w-12 h-12 text-yellow-400 mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
+                            <h5 class="font-bold text-white">Firebase</h5>
+                            <p class="text-gray-400 text-sm">BaaS</p>
+                        </div>
+                        <div class="tech-card group">
+                            <i data-lucide="git-branch" class="w-12 h-12 text-purple-400 mx-auto mb-3 group-hover:scale-110 transition-transform"></i>
+                            <h5 class="font-bold text-white">Git</h5>
+                            <p class="text-gray-400 text-sm">Version Control</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 slide-in">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        &lt;Mes <span class="cyber-gradient bg-clip-text text-transparent">Projets/&gt;</span>
+                    </h2>
+                    <div class="w-20 h-1 mobile-gradient mx-auto mb-8"></div>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        Applications mobiles et solutions web qui font la différence
+                    </p>
+                </div>
+                
+                <!-- Mobile Apps Section -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                        <i data-lucide="smartphone" class="w-8 h-8 text-cyan-400 mr-3"></i>
+                        Applications Mobile
+                    </h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Mobile App 1 -->
+                        <div class="project-card-mobile group">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="App E-commerce Mobile" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 right-4 flex space-x-2">
+                                        <button onclick="alert('Démo disponible sur demande')" class="p-2 bg-cyan-400/20 backdrop-blur-sm rounded-full hover:bg-cyan-400/30 transition-colors neon-border">
+                                            <i data-lucide="play" class="w-4 h-4 text-cyan-400"></i>
+                                        </button>
+                                        <button onclick="alert('Code source disponible')" class="p-2 bg-cyan-400/20 backdrop-blur-sm rounded-full hover:bg-cyan-400/30 transition-colors neon-border">
+                                            <i data-lucide="code" class="w-4 h-4 text-cyan-400"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 left-4 flex space-x-2">
+                                    <span class="px-3 py-1 cyber-gradient text-black text-xs rounded-full font-bold">Flutter</span>
+                                    <span class="px-3 py-1 bg-pink-500 text-white text-xs rounded-full">Mobile</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white mb-3">ShopFlow - E-commerce App</h4>
+                                <p class="text-gray-400 mb-4 leading-relaxed">Application e-commerce cross-platform avec paiements intégrés, gestion de panier et notifications push.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full">Flutter</span>
+                                    <span class="px-3 py-1 bg-pink-500/20 text-pink-400 text-sm rounded-full">Firebase</span>
+                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-sm rounded-full">Stripe</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex space-x-2">
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                    </div>
+                                    <span class="text-gray-400 text-sm">5000+ téléchargements</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile App 2 -->
+                        <div class="project-card-mobile group">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1331&q=80" alt="App Pharmacies de Garde Bénin" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 right-4 flex space-x-2">
+                                        <button onclick="alert('Démo disponible sur demande')" class="p-2 bg-cyan-400/20 backdrop-blur-sm rounded-full hover:bg-cyan-400/30 transition-colors neon-border">
+                                            <i data-lucide="play" class="w-4 h-4 text-cyan-400"></i>
+                                        </button>
+                                        <button onclick="alert('Code source disponible')" class="p-2 bg-cyan-400/20 backdrop-blur-sm rounded-full hover:bg-cyan-400/30 transition-colors neon-border">
+                                            <i data-lucide="code" class="w-4 h-4 text-cyan-400"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 left-4 flex space-x-2">
+                                    <span class="px-3 py-1 cyber-gradient text-black text-xs rounded-full font-bold">Flutter</span>
+                                    <span class="px-3 py-1 bg-red-500 text-white text-xs rounded-full">Santé</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white mb-3">PharmaGarde Bénin</h4>
+                                <p class="text-gray-400 mb-4 leading-relaxed">Application mobile pour localiser les pharmacies de garde au Bénin avec géolocalisation en temps réel, itinéraires et informations détaillées.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full">Flutter</span>
+                                    <span class="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Maps API</span>
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 text-sm rounded-full">Géolocalisation</span>
+                                    <span class="px-3 py-1 bg-orange-500/20 text-orange-400 text-sm rounded-full">Java Backend</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex space-x-2">
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                    </div>
+                                    <span class="text-gray-400 text-sm">12000+ utilisateurs</span>
+                                </div>
+                                <div class="mt-4 p-3 bg-red-500/10 border border-red-500/20 rounded-lg">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2 text-red-400 text-sm">
+                                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                            <span class="font-medium">🇧🇯 Spécial Bénin</span>
+                                        </div>
+                                        <div class="flex items-center space-x-1">
+                                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                                            <span class="text-xs text-green-400">En ligne</span>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-400 text-xs mt-2">
+                                        ✅ Couverture nationale • 📊 Base de données mise à jour quotidiennement<br>
+                                        💰 <strong>Impact économique :</strong> -40% temps de recherche pharmacie • +60% satisfaction utilisateurs
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile App 3 -->
+                        <div class="project-card-mobile group">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="App Crypto Tracker" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 right-4 flex space-x-2">
+                                        <button onclick="alert('Démo disponible sur demande')" class="p-2 bg-cyan-400/20 backdrop-blur-sm rounded-full hover:bg-cyan-400/30 transition-colors neon-border">
+                                            <i data-lucide="play" class="w-4 h-4 text-cyan-400"></i>
+                                        </button>
+                                        <button onclick="alert('Code source disponible')" class="p-2 bg-cyan-400/20 backdrop-blur-sm rounded-full hover:bg-cyan-400/30 transition-colors neon-border">
+                                            <i data-lucide="code" class="w-4 h-4 text-cyan-400"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 left-4 flex space-x-2">
+                                    <span class="px-3 py-1 cyber-gradient text-black text-xs rounded-full font-bold">Flutter</span>
+                                    <span class="px-3 py-1 bg-yellow-500 text-black text-xs rounded-full">FinTech</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white mb-3">CryptoVault</h4>
+                                <p class="text-gray-400 mb-4 leading-relaxed">Portfolio crypto avec tracking en temps réel, alertes de prix et analyses de marché avancées.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full">Flutter</span>
+                                    <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-sm rounded-full">APIs</span>
+                                    <span class="px-3 py-1 bg-orange-500/20 text-orange-400 text-sm rounded-full">WebSocket</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex space-x-2">
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-current"></i>
+                                    </div>
+                                    <span class="text-gray-400 text-sm">8000+ traders</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Projects Section -->
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                        <i data-lucide="globe" class="w-8 h-8 text-purple-400 mr-3"></i>
+                        Projets Web & API
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Web Project 1 -->
+                        <div class="project-card-mobile group">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80" alt="Dashboard Analytics" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 right-4 flex space-x-2">
+                                        <button onclick="alert('Démo disponible sur demande')" class="p-2 bg-cyan-400/20 backdrop-blur-sm rounded-full hover:bg-cyan-400/30 transition-colors neon-border">
+                                            <i data-lucide="external-link" class="w-4 h-4 text-cyan-400"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 left-4 flex space-x-2">
+                                    <span class="px-3 py-1 bg-orange-500 text-white text-xs rounded-full">Laravel</span>
+                                    <span class="px-3 py-1 bg-blue-500 text-white text-xs rounded-full">API</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white mb-3">Analytics Dashboard Pro</h4>
+                                <p class="text-gray-400 mb-4 leading-relaxed">Plateforme d'analytics en temps réel avec API REST, visualisations de données et rapports automatisés.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-orange-500/20 text-orange-400 text-sm rounded-full">Laravel</span>
+                                    <span class="px-3 py-1 bg-blue-500/20 text-blue-400 text-sm rounded-full">Vue.js</span>
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 text-sm rounded-full">MySQL</span>
+                                    <span class="px-3 py-1 bg-purple-500/20 text-purple-400 text-sm rounded-full">Redis</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Web Project 2 -->
+                        <div class="project-card-mobile group">
+                            <div class="relative overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80" alt="E-learning Platform" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div class="absolute bottom-4 right-4 flex space-x-2">
+                                        <button onclick="alert('Démo disponible sur demande')" class="p-2 bg-cyan-400/20 backdrop-blur-sm rounded-full hover:bg-cyan-400/30 transition-colors neon-border">
+                                            <i data-lucide="external-link" class="w-4 h-4 text-cyan-400"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="absolute top-4 left-4 flex space-x-2">
+                                    <span class="px-3 py-1 bg-indigo-500 text-white text-xs rounded-full">WordPress</span>
+                                    <span class="px-3 py-1 bg-green-500 text-white text-xs rounded-full">LMS</span>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-xl font-bold text-white mb-3">EduFlow - LMS Platform</h4>
+                                <p class="text-gray-400 mb-4 leading-relaxed">Plateforme d'apprentissage en ligne avec gestion de cours, quiz interactifs et suivi de progression.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-indigo-500/20 text-indigo-400 text-sm rounded-full">WordPress</span>
+                                    <span class="px-3 py-1 bg-green-500/20 text-green-400 text-sm rounded-full">LearnDash</span>
+                                    <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 text-sm rounded-full">WooCommerce</span>
+                                    <span class="px-3 py-1 bg-red-500/20 text-red-400 text-sm rounded-full">Elementor</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center slide-in">
+                    <div class="card-mobile p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold text-white mb-4 flex items-center">
+                            <i data-lucide="target" class="w-7 h-7 text-cyan-400 mr-3"></i>
+                            Prêt à transformer votre idée en succès ?
+                        </h3>
+                        <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
+                            🚀 <strong>Développement express</strong> • 💡 <strong>Conseils stratégiques inclus</strong> • 📈 <strong>ROI garanti</strong><br>
+                            Rejoignez mes 30+ clients qui ont multiplié leur chiffre d'affaires grâce à leurs apps mobile !
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+                            <button onclick="scrollToSection('#contact')" class="px-8 py-4 mobile-gradient text-black rounded-xl font-bold neon-glow hover:scale-105 transform transition-all duration-300 inline-flex items-center space-x-2">
+                                <i data-lucide="rocket" class="w-5 h-5"></i>
+                                <span>Démarrer mon projet</span>
+                            </button>
+                            <button onclick="window.open('https://wa.me/22996281025?text=Salut%20Enirack%2C%20je%20veux%20discuter%20d%27un%20projet%20mobile', '_blank')" class="px-8 py-4 neon-border text-cyan-400 rounded-xl font-bold hover:bg-cyan-400/10 transition-all duration-300 inline-flex items-center space-x-2">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                <span>Consultation gratuite</span>
+                            </button>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-green-400 text-sm font-medium mb-2">⚡ OFFRE LIMITÉE : Audit technique gratuit ⚡</p>
+                            <p class="text-gray-500 text-xs">Premiers clients 2025 : -20% sur le développement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 slide-in">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                        &lt;Contact <span class="cyber-gradient bg-clip-text text-transparent">Me/&gt;</span>
+                    </h2>
+                    <div class="w-20 h-1 mobile-gradient mx-auto mb-8"></div>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        Connectons-nous pour discuter de votre prochain projet mobile ou web
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="space-y-8 slide-in">
+                        <div class="card-mobile p-6 rounded-2xl">
+                            <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                                <i data-lucide="wifi" class="w-6 h-6 text-cyan-400 mr-3"></i>
+                                Restons connectés
+                            </h3>
+                            <div class="space-y-4">
+                                <a href="mailto:enirackjerrydada@gmail.com" class="flex items-center space-x-4 text-gray-300 hover:text-cyan-400 transition-colors group">
+                                    <div class="w-12 h-12 rounded-full bg-cyan-400/20 flex items-center justify-center group-hover:bg-cyan-400/30 transition-colors">
+                                        <i data-lucide="mail" class="w-6 h-6 text-cyan-400"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Email</p>
+                                        <p class="text-sm text-gray-400">enirackjerrydada@gmail.com</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://wa.me/22996281025" target="_blank" class="flex items-center space-x-4 text-gray-300 hover:text-green-400 transition-colors group">
+                                    <div class="w-12 h-12 rounded-full bg-green-400/20 flex items-center justify-center group-hover:bg-green-400/30 transition-colors">
+                                        <i data-lucide="message-circle" class="w-6 h-6 text-green-400"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">WhatsApp</p>
+                                        <p class="text-sm text-gray-400">+229 96 28 10 25</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://linkedin.com/in/enirack-dada" target="_blank" class="flex items-center space-x-4 text-gray-300 hover:text-blue-400 transition-colors group">
+                                    <div class="w-12 h-12 rounded-full bg-blue-400/20 flex items-center justify-center group-hover:bg-blue-400/30 transition-colors">
+                                        <i data-lucide="linkedin" class="w-6 h-6 text-blue-400"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">LinkedIn</p>
+                                        <p class="text-sm text-gray-400">@enirack-dada</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://github.com/enirack" target="_blank" class="flex items-center space-x-4 text-gray-300 hover:text-purple-400 transition-colors group">
+                                    <div class="w-12 h-12 rounded-full bg-purple-400/20 flex items-center justify-center group-hover:bg-purple-400/30 transition-colors">
+                                        <i data-lucide="github" class="w-6 h-6 text-purple-400"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">GitHub</p>
+                                        <p class="text-sm text-gray-400">@enirack</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Services Cards -->
+                        <div class="space-y-4">
+                            <div class="card-mobile p-4 rounded-xl flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-full cyber-gradient flex items-center justify-center">
+                                    <i data-lucide="smartphone" class="w-5 h-5 text-black"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Développement Mobile</h4>
+                                    <p class="text-sm text-gray-400">Flutter, FlutterFlow, React Native</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card-mobile p-4 rounded-xl flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 flex items-center justify-center">
+                                    <i data-lucide="coffee" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Backend Java/Spring</h4>
+                                    <p class="text-sm text-gray-400">Spring Boot, APIs REST, Microservices</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card-mobile p-4 rounded-xl flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-blue-500 flex items-center justify-center">
+                                    <i data-lucide="globe" class="w-5 h-5 text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Solutions Web</h4>
+                                    <p class="text-sm text-gray-400">WordPress, E-commerce, CMS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="slide-in">
+                        <div class="card-mobile p-8 rounded-2xl">
+                            <h3 class="text-xl font-bold text-white mb-6 flex items-center">
+                                <i data-lucide="send" class="w-6 h-6 text-cyan-400 mr-3"></i>
+                                Démarrer un projet
+                            </h3>
+                            <form class="space-y-6" onsubmit="handleFormSubmit(event)">
+                                <div>
+                                    <label class="block text-gray-300 mb-2 font-medium">Nom complet</label>
+                                    <input type="text" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-cyan-400 focus:outline-none transition-colors">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-300 mb-2 font-medium">Email</label>
+                                    <input type="email" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-cyan-400 focus:outline-none transition-colors">
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-300 mb-2 font-medium">Type de projet</label>
+                                    <select class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-cyan-400 focus:outline-none transition-colors">
+                                        <option value="">Sélectionner un type</option>
+                                        <option value="mobile">Application Mobile</option>
+                                        <option value="web">Site Web / E-commerce</option>
+                                        <option value="api">API / Backend</option>
+                                        <option value="consulting">Consulting Tech</option>
+                                        <option value="other">Autre</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-300 mb-2 font-medium">Budget estimé</label>
+                                    <select class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-cyan-400 focus:outline-none transition-colors">
+                                        <option value="">Sélectionner un budget</option>
+                                        <option value="500-1500">500€ - 1 500€</option>
+                                        <option value="1500-3000">1 500€ - 3 000€</option>
+                                        <option value="3000-5000">3 000€ - 5 000€</option>
+                                        <option value="5000+">5 000€+</option>
+                                        <option value="discuss">À discuter</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-gray-300 mb-2 font-medium">Description du projet</label>
+                                    <textarea rows="4" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:border-cyan-400 focus:outline-none transition-colors resize-none" placeholder="Décrivez votre projet, vos objectifs et vos attentes..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full py-4 mobile-gradient text-black rounded-xl font-bold neon-glow hover:scale-105 transform transition-all duration-300 flex items-center justify-center space-x-2">
+                                    <i data-lucide="rocket" class="w-5 h-5"></i>
+                                    <span>Envoyer le message</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Availability Status -->
+                <div class="mt-16 text-center slide-in">
+                    <div class="card-mobile p-6 rounded-2xl inline-block">
+                        <div class="flex items-center justify-center space-x-3">
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                            <span class="text-white font-medium">Disponible pour nouveaux projets</span>
+                            <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2">Réponse sous 24h garantie</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="cyber-gradient bg-clip-text text-transparent text-2xl font-bold mb-4">
+                    &lt;ENIRACK.DEV/&gt;
+                </div>
+                <p class="text-gray-400 mb-4">
+                    © 2025 Enirack Jerry Dada. Créateur de solutions mobiles et web innovantes.
+                </p>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/enirack" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/enirack-dada" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://wa.me/22996281025" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    </a>
+                    <a href="mailto:enirackjerrydada@gmail.com" class="text-gray-400 hover:text-cyan-400 transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Change profile picture function
+        function changeProfilePic() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        document.getElementById('profile-pic').src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            input.click();
+        }
+        
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Typing animation
+        const typingText = document.getElementById('typing-text');
+        const roles = [
+            'Mobile Developer 📱',
+            'Flutter Expert 🚀',
+            'Full Stack Developer 💻',
+            'FlutterFlow Pro ⚡',
+            'API Architect 🔗',
+            'Tech Innovator 🌟'
+        ];
+        
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 150;
+        
+        function typeEffect() {
+            const currentRole = roles[roleIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typingText.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 150;
+            }
+            
+            if (!isDeleting && charIndex === currentRole.length) {
+                isDeleting = true;
+                typingSpeed = 2000;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typingSpeed = 500;
+            }
+            
+            setTimeout(typeEffect, typingSpeed);
+        }
+        
+        typeEffect();
+        
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.querySelector(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.add('hidden');
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('bg-black/95', 'backdrop-blur-md', 'border-b', 'border-gray-800');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.remove('bg-black/95', 'backdrop-blur-md', 'border-b', 'border-gray-800');
+                header.classList.add('bg-transparent');
+            }
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate skill bars
+                    if (entry.target.closest('#skills')) {
+                        const skillBars = entry.target.querySelectorAll('.skill-bar-mobile');
+                        skillBars.forEach(bar => {
+                            setTimeout(() => {
+                                bar.style.setProperty('--skill-width', bar.dataset.width);
+                                bar.classList.add('animate');
+                            }, 500);
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all slide-in elements
+        document.querySelectorAll('.slide-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Show success message
+            const button = event.target.querySelector('button[type="submit"]');
+            const originalContent = button.innerHTML;
+            
+            button.innerHTML = '<i data-lucide="check" class="w-5 h-5"></i><span>Message envoyé !</span>';
+            button.classList.add('bg-green-500');
+            
+            // Reset form
+            setTimeout(() => {
+                event.target.reset();
+                button.innerHTML = originalContent;
+                button.classList.remove('bg-green-500');
+                
+                // Re-initialize Lucide icons
+                lucide.createIcons();
+            }, 3000);
+            
+            // Here you would typically send the form data to your backend
+            console.log('Form submitted successfully');
+        }
+        
+        // Add some interactive particles on mouse move
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.98) {
+                createParticle(e.clientX, e.clientY);
+            }
+        });
+        
+        function createParticle(x, y) {
+            const particle = document.createElement('div');
+            particle.className = 'fixed w-1 h-1 bg-cyan-400 rounded-full pointer-events-none z-50';
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                { transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px) scale(0)`, opacity: 0 }
+            ], {
+                duration: 1000,
+                easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        }
+    </script>
+</body>
+</html>
